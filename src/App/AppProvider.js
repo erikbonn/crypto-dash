@@ -1,6 +1,6 @@
 import React from 'react'
-
 const cc = require('cryptocompare')
+
 export const AppContext = React.createContext();
 
 export class AppProvider extends React.Component {
@@ -19,8 +19,9 @@ export class AppProvider extends React.Component {
 	}
 
 	fetchCoins = async () => {
-		let coinList = ( await cc.coinList()).data;
-		this.setState(coinList);
+		let coinList = (await cc.coinList()).Data;
+		this.setState({ coinList });
+		console.log('coins', coinList);
 	}
 
 	confirmFavorites = () => {
@@ -34,7 +35,7 @@ export class AppProvider extends React.Component {
 	}
 	savedSettings() {
 		let cryptoDashData = JSON.parse(localStorage.getItem('cryptoDash'));
-		if(!cryptoDashData) {
+		if (!cryptoDashData) {
 			return { page: 'settings', firstVisit: true }
 		}
 		return {};
