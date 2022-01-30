@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## This was a Udemy project that was practice for utilizing React Context API
+
 ## Available Scripts
 
 In the project directory, you can run:
